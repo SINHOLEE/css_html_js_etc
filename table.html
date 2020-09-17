@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Example</title>
+</head>
+<body>
+    <table class="restruant"style="text-align: center; margin:100px 0;" summary="짬뽕은 자장면보다 500원 비싸고 열량이 50kcal 높다">
+        <caption>자장면과 짬뽕의 가격과 열량 비교</caption>
+        <col span="1" style="width:100px; background-color:brown" >
+        <col span="2" style="width:150px; background-color:cyan" >
+        <thead style="background-color: burlywood;">
+        <tr>
+        <th scope="col" >구분</th>
+        <th scope="col" abbr="price">가격(won)</th>
+        <th scope="col" abbr="kcal">열량(kcal)</th>
+        </tr>
+        </thead>
+        <tfoot>
+        <tr>
+        <th scope="row" >계</th>
+        <td>6,500</td>
+        <td>650</td>
+        </tr>
+        </tfoot>
+        <tbody>
+        <tr>
+        <th scope="row">자장면</th>
+        <td>3,000</td>
+        <td>300</td>
+        </tr>
+        <tr>
+        <th scope="row">짬뽕</th>
+        <td>3,500</td>
+        <td>350</td>
+        </tr>
+        </tbody>
+        </table>
+        <script src="table.js"></script>
+</body>
+</html>

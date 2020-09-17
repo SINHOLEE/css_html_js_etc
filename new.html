@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="reset.css">
+</head>
+<body>
+    <style>
+        .mykin_list {display: inline-block;}
+        .mykin_list a{font-size:100px;font-weight:bold;display: flex;}
+        .mykin_list_v1 a{color:#f00}
+        .mykin_list_v2 a{color:blueviolet}
+    </style>
+    <div class="mykin_list"><a href="#">바로가기</a>
+    </div>
+    <div class="mykin_list mykin_list_v1"><a href="#">바로가기</a>
+    </div>
+    <div class="mykin_list mykin_list_v2"><a href="#">바로가기</a>
+    </div>
+    
+    <div class="mykin_list">
+        <label for="valA" id="labA"> A : </label>
+        <input type="text" name="valA" id="valA" value="" title="A의 값을 입력하세요.">
+        <input type="checkbox" name="valB" id="valB" value="chchch" title="B 선택">
+        <label for="valB" id="labB"> B </label>
+    </div>
+
+    <label for="searchTerm" id="labSearch"> Search for : </label>
+
+<select id="scope" title="검색범위">
+    <option>subject</option>
+    <option>actor</option>
+    <option>writer</option>
+    <option>content</option>
+</select>
+<input id="searchTerm" name="searchTerm" title="검색어를 입력하세요"/>
+
+
+
+</body>
+</html>
