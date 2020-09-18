@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float를 선언한 자식요소를 가진 부모요소의 높이가 정상적이지 않음</title>
+    <style>
+        .container {
+          color: white;
+          text-align: center;
+          padding: 10px;
+          background-color: #def0c2;
+          overflow: hidden;  /* 가장 쉬운 방법 */
+          /* float: left; */ /* 권장 ㄴㄴ */  
+        }
+        /* 두번째로 추천하는 방법.. 
+        아..!!! 이것의 의미는 float가 적용된 박스의 끝에 float를 제거하라는 뜻
+        clear:left; 왼쪽만 취소
+        clear:right; 오른쪽만 취소
+        clear:both; 양쪽모두 취소
+        */
+        .clearfix:after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .d1, .d2 {
+          float: left;
+          width: 50%;
+          padding: 20px 0;
+        }
+        .d1 {
+          background-color: #59b1f6;
+        }
+        .d2 {
+          background-color: #ffb5b4;
+        }
+      </style>
+    
+</head>
+<body>
+    <div class="container clearfix">
+        <div class="d1">1</div>
+        <div class="d2">2</div>
+      </div>
+      <div style="background:red;padding:10px;color:white;">3</div>
+    
+</body>
+</html>

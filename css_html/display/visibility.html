@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>visibility</title>
+    <style>
+        .visible { visibility: visible; font-weight: initial; }
+        .hidden  { visibility: hidden; }
+    
+        table, td { border: 1px solid black; opacity: 1;}
+        /* .collapse { visibility: collapse; } */
+        .collapse { visibility: hidden; } 
+      </style>
+</head>
+<body>
+    <h1 class="visible">visibility: visible</h1>
+    <h1 class="hidden">visibility: hidden</h1>  <!-- 공간은 놔두고 보이지만 않게 한다.-->
+    <h1 style="display:none">display:none</h1>  <!-- 공간도 없애고 보이지도 않는다.  햄버거바 조작하는 동작에 자주 쓰일듯-->
+  
+    <table>
+      <tr>
+        <td>A</td>
+        <td>B</td>
+      </tr>
+      <tr class="collapse">
+        <td>C</td>
+        <td>D</td>
+      </tr>
+    </table>
+</body>
+</html>

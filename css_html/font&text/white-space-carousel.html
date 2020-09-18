@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>White Space</title>
+    <style>
+
+        body {
+          font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+          color: #58666e;
+          background-color: #f0f3f4;
+        }
+    
+        .carousel-view {
+          /* 자식 컨텐츠 너비에 fit */
+          display: inline-block;
+          position: relative;
+          margin: 0 auto;
+          border: 1px dotted red;
+        }
+    
+        .carousel-container {
+          /* 자식 컨텐츠의 줄바꿈을 무시하여 1줄로 가로 정렬한다. */
+          white-space: nowrap;
+          /* inline-block 레벨 요소 뒤에 공백(엔터, 스페이스 등)이 있는 경우,
+             정의하지 않은 space(4px)가 자동 지정된다. 이것을 회피하는 방법이다. */
+          font-size: 0;
+          margin: 0;
+          padding: 0;
+        }
+    
+        .carousel-item {
+          display: inline-block;
+          list-style: none;
+          padding: 5px;
+        }
+    
+        .carousel-item:last-child {
+          margin-right: 0;
+        }
+    
+        .carousel-control {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 2em;
+          color: #fff;
+          background-color: transparent;
+          border-color: transparent;
+          cursor: pointer;
+          z-index: 99;
+        }
+    
+        .carousel-control:focus {
+          outline: none;
+        }
+    
+        .carousel-control.prev {
+          left: 0;
+        }
+    
+        .carousel-control.next {
+          right: 0;
+        }
+    
+    </style>
+</head>
+<body>
+  <!-- 인라인블락을 이용한 가로 정렬 grid, flex이용 하지 않고. -->
+    <div id="carousel" class="carousel-view">
+        <button class="carousel-control prev">&laquo;</button>
+        <ul class="carousel-container">
+          <li class="carousel-item">
+            <a href="#">
+              <img src="http://via.placeholder.com/400x150/3498db/fff&text=1">
+            </a>
+          </li>
+          <li class="carousel-item">
+            <a href="#">
+              <img src="http://via.placeholder.com/400x150/3498db/fff&text=2">
+            </a>
+          </li>
+          <li class="carousel-item">
+            <a href="#">
+              <img src="http://via.placeholder.com/400x150/3498db/fff&text=3">
+            </a>
+          </li>
+          <li class="carousel-item">
+            <a href="#">
+              <img src="http://via.placeholder.com/400x150/3498db/fff&text=4">
+            </a>
+          </li>
+          <li class="carousel-item">
+            <a href="#">
+              <img src="http://via.placeholder.com/400x150/3498db/fff&text=5">
+            </a>
+          </li>
+
+
+        </ul>
+        <button class="carousel-control next">&raquo;</button>
+      </div>
+    
+</body>
+</html>

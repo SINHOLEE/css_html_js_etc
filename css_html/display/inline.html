@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inline</title>
+    <link rel="stylesheet" href="../../reset.css">
+    <style>
+        h1{
+            height: 36px;
+        }
+        span {
+            float: left;
+            background-color: red;
+            border:0;
+            color: white;
+            padding: 10px;
+            /* width, height, margin-top, margin-bottom 프로퍼티를 지정할 수 없다. */
+            /* width: 200px; */
+           
+            outline: 1px solid blue;
+            /* 상, 하 여백은 line-height로 지정한다. */
+            
+          }
+      
+    </style>
+</head>
+<body>
+    <!-- 
+        inline 특성을 가지는 요소(inline 레벨 요소 또는 inline 요소)는 아래와 같은 특징을 갖는다.
+        새로운 라인에서 시작하지 않으며 문장의 중간에 들어갈 수 있다. 즉, 줄을 바꾸지 않고 다른 요소와 함께 한 행에 위치한다.
+        content의 너비만큼 가로폭을 차지한다.
+        width, height, margin-top, margin-bottom 프로퍼티를 지정할 수 없다. 상, 하 여백은 line-height로 지정한다.
+        inline 레벨 요소 뒤에 공백(엔터, 스페이스 등)이 있는 경우, 정의하지 않은 space(4px)가 자동 지정된다.
+        inline 레벨 요소 내에 block 레벨 요소를 포함할 수 없다. inline 레벨 요소는 일반적으로 block 레벨 요소에 포함되어 사용된다.
+
+        inline 레벨 요소 예
+        span
+        a
+        strong
+        img
+        br
+        input
+        select
+        textarea
+        button
+     -->
+     <h1>My <span>Important</span> Heading</h1>
+     <span>Inline1</span>
+     <span>Inline2</span>
+     <span>Inline3</span>
+   
+</body>
+</html>
