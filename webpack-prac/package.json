@@ -1,0 +1,17 @@
+{
+  "name": "webpack-prac",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "dependencies": {
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node_modules/.bin/webpack"
+  },
+  "author": "",
+  "license": "ISC"
+}
