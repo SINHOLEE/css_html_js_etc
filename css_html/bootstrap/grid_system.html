@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="join_view.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- 핸드폰-->
+        <div class="form-group row">
+            <label class="control-label col-xs-2">휴대전화</span></label>
+            <div class="form-input-box  col-xs-8">
+                <input class="form-control col-12" type="text" name="cellphone" placeholder="휴대폰 번호를 인증해주세요."
+                    ng-model="user.cellphone" phone-number country-code="countrycode_cellphone" required>
+
+                <!-- 필수항목입니다 에러. -->
+                <div class="warning-text-container " ng-show="join_form.$submitted || join_form.cellphone.$touched">
+                    <span class="text-danger" ng-show="join_form.cellphone.$error.required">
+                        필수항목입니다.
+                    </span>
+                </div>
+                <!-- 형식이 일치하지 않습니다. -->
+
+                <!-- 본인인증관련 에러메시지 -->
+
+                <div class="warning-text-container" ng-show="join_form.$submitted">
+                    <span class="text-danger"
+                        ng-show="join_form.authdi.$error.required && !join_form.authdi.$error.auth">본인인증을 먼저
+                        해주세요.</span>
+                </div>
+                <div class="warning-text-container" ng-show="join_form.authdi.$touched">
+                    <span class="text-danger" ng-show="join_form.authdi.$error.unique">이미 등록된 사용자 입니다.</span>
+                </div>
+            </div>
+            <!-- 인증버튼 동적 변화 적용 수정 전-->
+            <!--
+                <button class="btn btn-secondary auth-btn {{join_form.authdi.$modelValue && !join_form.authdi.$error.auth && !join_form.authdi.$error.unique ? 'permitted': ''}}"   name="identity_auth_type" ng-model="user.identity_auth_type" value="0" 
+                type="button" role="button" ng-click="identity_auth.open()">{{join_form.authdi.$modelValue && !join_form.authdi.$error.auth && !join_form.authdi.$error.unique ? "확인완료":"인증하기"}}</button>
+                -->
+            <button class="btn auth-btn  col-xs-1" name="identity_auth_type" type="button"
+                role="button">
+                인증하기
+            </button>
+        </div>
+    </div>
+</body>
+
+</html>

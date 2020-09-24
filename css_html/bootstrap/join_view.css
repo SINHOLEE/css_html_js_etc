@@ -1,0 +1,251 @@
+body{
+    background-color: #F5F9FC;
+}
+.auth-btn{
+    margin: 0 0 0 10px;
+    height: 40px;
+    width: 80px;
+    background-color: #6a7483;
+
+    /* 요구사항 */
+    font-size : 13px;
+    font-weight : 500;
+    color : #ffffff;
+    letter-spacing : -0.03em;
+}
+a:hover{
+    color:#277c53;
+}
+a:focus {
+    color:#277c53;
+}
+.auth-btn:hover{
+    font-size : 13px;
+    font-weight : 500;
+    color : #ffffff;
+    letter-spacing : -0.03em;
+    background-color: #3b444f;
+
+
+}
+.permitted{
+    background-color: #52bf8a;
+}
+.input-placeholder{
+    /* 기획팀 요구사항 */
+    font-size : 13px;
+    font-weight : 500;
+    color : #acacac;
+    letter-spacing : -0.03em;
+}
+a{
+    text-decoration: none;
+    font-size : 13px;
+    font-weight : 300;
+    color : #40b17a;
+    letter-spacing : -0.03em;
+}
+.tm-text{
+    font-size: 50%;
+    top: -1.2em;
+}
+.back-btn{
+    color: #6a7483;
+    background-color: #ffffff;
+    border-color: #cccccc;
+}
+.btn:focus{
+    outline-offset: 0;
+    color: #ffffff;
+}
+.back-btn:focus{
+    outline-offset: 0;
+    color: #6a7483;
+}
+.back-btn:hover{
+    color: #6a7483;
+    background-color: #eeeef1;
+    border-color: #cccccc;
+}
+.submit-btn{
+    background-color: #52bf8a;
+}
+.submit-btn:hover{
+    background-color: #46af7c;
+}
+.sub-alert-hr{
+    margin-right: 70px;
+    margin-bottom: 40px;
+    color: #dee1e7;
+}
+.form-group{
+    padding-left: 16px;
+    margin-bottom: 10px;
+}
+.control-label{
+    display: inline-block;
+    float: left;
+    width: 160px;
+    line-height: 40px;
+    padding-top: 0 !important;
+    text-align: left !important;
+    vertical-align: middle;
+
+    /* 기획팀 요구사항 */
+    font-size : 13px;
+    font-weight : 500;
+    color : #464646;
+    letter-spacing : -0.03em;
+}
+.warning-text-container{
+    /* margin-bottom: 40px; */
+}
+.form-control{
+    height: 40px;
+}
+.form-input-box{ 
+    min-width: 400px;
+    /* height: 40px; */
+    display: inline-block;
+}
+.text-muted{
+    font-size : 12px;
+    font-weight : 300;
+    color :#646464;
+    letter-spacing : -0.03em;
+}
+.warning-text-container > .text-danger{
+    font-size : 12px;
+    font-weight : 300;
+    color : #ed1c24;
+    letter-spacing : -0.03em;
+}
+.warning-text-container > .text-success{
+    font-size : 13px;
+    font-weight : 500;
+    color : #40b17a;
+    letter-spacing : -0.03em;
+}
+.sub-alert-description{
+    /* 기획팀 요구사항 */
+    font-size : 13px;
+    font-weight : 300;
+    color : #646464;
+    letter-spacing : -0.03em;
+}
+input::placeholder{
+    /* 기획팀 요구사항 */
+    font-size : 13px;
+    font-weight : 500;
+    color : #acacac;
+    letter-spacing : -0.03em;
+}
+.sub-alert-title{
+    margin-top: 0 !important;
+
+    /* 기획팀 요구사항 */
+    font-size : 16px;
+    font-weight : 500;
+    color : #242424;
+    letter-spacing : -0.03em;
+}
+.subtitle{
+    padding:0 0 0 0;
+    margin-bottom:20px;    
+    border-bottom: 0;
+    font-size: 24px;
+}
+.sub-box{
+    padding-top: 50px;
+    padding-left: 50px;
+    /* -top: 50px;
+    margin-left: 50px; */
+}
+.required-asterisk{
+    color: #52bf8a;
+}
+.bottom_margin_30{
+    margin-bottom: 30px;
+}
+.non-required-input-box{
+    margin-bottom: 20px !important;
+} 
+.container-box{
+    float: left;
+    border:1px solid #cccccc;
+    /* padding:0.5em; */
+    margin:1em;
+    background-color: white;
+    width: 900px;
+}
+.box-square{
+    margin: 0 0 30px 0;
+}
+main{
+    margin-left: 50%;
+    margin-top: 0;
+}
+.center-block{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    position: absolute;
+    margin-left: -450px;
+}
+.agree-checkbox{
+    font-size : 13px;
+    font-weight : 300;
+    color : #646464;
+    letter-spacing : -0.03em;
+}
+
+/* custom -header */
+
+.containers .header-container {
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    background-color: #52bf8a;
+    z-index: 1;
+}
+
+.containers .header-container .navigation .navi-left {
+    float: left;
+    line-height: 50px;
+    margin: 0px 30px;
+    vertical-align: middle;
+    }
+.containers .header-container .navigation .layout-right {
+    float: right;
+    margin: 0px 30px;
+    line-height: 50px;
+    vertical-align: middle;
+}
+
+.containers .header-container .navigation .layout-right a {
+    color: #ffffff;
+    font-size: 15px;
+}
+/* 체크박스 */
+input[type="checkbox"] + label {
+    width: 15px;
+    height: 15px;
+    padding-left: 0px;
+    min-height: 0 !important;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 0 0 #000 !important;
+}
+
+input[type="checkbox"]{
+    display: none;
+}
+.form-group .agree-checkbox span{
+    margin-right: 30px;
+}
+input[type="checkbox"]:checked + label{
+    /* background-image: url("../images/common/check_box.png");
+    background-size: contain; */
+    background-color: #52bf8a;
+    border: 1px solid transparent;
+
+}
