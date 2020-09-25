@@ -20,3 +20,12 @@ body #bg .img {
 .after-load{
     transition: all 0.5s;
 }
+
+body #jpg-img {
+    width: 400px;
+    height: 400px;
+    background-image: url(./../images/Apple-MacBook.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
