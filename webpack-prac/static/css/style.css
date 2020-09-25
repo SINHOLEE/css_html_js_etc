@@ -1,0 +1,22 @@
+body #bg {
+    background-color: rebeccapurple;
+    width: 200px; 
+    height:200px; 
+}
+
+body #bg .img {
+    width: 20px;
+    height: 20px;
+    box-sizing: border-box;
+    background-image: url(./../images/로고_ixcloud_symbol.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    border: 3px solid turquoise;
+    align-self: center;
+    vertical-align: middle;
+    /* transition: all 0.5s; */
+}
+.after-load{
+    transition: all 0.5s;
+}
