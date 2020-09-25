@@ -1,5 +1,6 @@
 export const dynamic = () => {
     
+    
     const bg = document.getElementById('bg');
     // 왜 노드를 잡을때,  div만 잡지 못하고 text - div -text 순으로 잡히나요. 그리고 이걸 해결하기 위해선 어떻게 관리해야 할까요.
     // 해결:  <div id="bg"></div> 여기서 open tag와 close tag에 개행 문자가 있다면 브라우저는 이를 node라고 인식한다.
