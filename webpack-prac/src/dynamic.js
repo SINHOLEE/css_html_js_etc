@@ -1,4 +1,4 @@
-// export const dynamic = () => {
+export const dynamic = () => {
     
 
 const bg = document.getElementById('bg');
@@ -58,4 +58,4 @@ const init = () => {
     imgs.forEach(el=>el.addEventListener('click', clickHandler))
 }
 init();
-// }
+}
