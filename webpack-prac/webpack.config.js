@@ -19,7 +19,7 @@ module.exports = {
       use: ["style-loader", "css-loader"], // css-loader를 적용한다, style-loader를 앞에 적용한다.왜? 리스트에서 뒤부터 읽기 때문에.
     },
     {
-      test: /\.png$/, // .png 확장자로 마치는 모든 파일
+      test: [/\.png$/,/\.jpg$/], // .png 확장자로 마치는 모든 파일  (여러 확장자일 경우, 리스트로)
       loader: "file-loader", // 파일 로더를 적용한다
       options: {
         publicPath: "./dist/", // prefix를 아웃풋 경로로 지정
