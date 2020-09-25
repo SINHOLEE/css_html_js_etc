@@ -65,6 +65,9 @@ export const dynamic = () => {
         // 변경되는 거리가 멀면 상대적으로 빨리 움직이고, 변경되는 거리가 짧으면 상대적으로 느리게 움직인다.
         // 이런 동작은 뭔가 부자연스러운 느낌이 강하게 든다.
     }
-    fill(5);
-    imgs.forEach(el=>el.addEventListener('click', clickHandler))
+    const init = () => {
+        fill(10);
+        imgs.forEach(el=>el.addEventListener('click', clickHandler))
+    }
+    init();
 }
