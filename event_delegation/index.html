@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 위임 by class</title>
+</head>
+<body>
+    <div id="menu">
+        <button data-action="save">저장</button>
+        <button data-action="load">불러오기</button>
+        <button data-action="delete">삭제</button>
+        <button data-action="search">검색</button>
+    </div>
+</body>
+<script>
+    class Menu{
+        constructor(elem){
+            this._elem = elem;
+            // this.onClick <- 해당 클래스의 메서드를 this._elem.onclick에다가 할당 때, .bind(this)를 통해 해당 함수에서 this로 사용되는 객체를 인자로 주입한다.
+            this._elem.onclick = this.onClick.bind(this); 
+
+            // elem.onclick = this.onClick; // 이때, onClick메서드 내부의 this는 elem가 된다.
+        }
+        save(){
+            alert("저장");
+        }
+
+        load(){
+            alert("불러오기");
+        }
+
+        search(){
+            alert("검색");
+        }
+
+        onClick(event){
+            let action = event.target.dataset.action; // 이건 뭐냐 ㅎ2
+            console.log(this)
+            console.log(this._elem)
+            console.log(event)
+            if (!action){
+                return    
+                // this.action(); // 이거 되나 확인 
+            }
+            this[action]();
+        }
+    }
+    const menu = document.getElementById("menu") // 이거 없어도 됨
+    new Menu(menu);
+
+    
+</script>
+</html>
