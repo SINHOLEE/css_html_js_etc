@@ -49,23 +49,20 @@ const fill = (n) => {
 }
 
 const clickHandler = (e) => {
-    console.log(e)
     // transition이 첫 랜더딩할때부터 있으면 그려지는 동안 구름이랑 네모칸이 움직여서 보기 시름
-    const cd = e.target.closest(".cloud-div");
-    console.log(cd)
-    if (!cd){
-        console.log("cd")
+    const cloudDiv = e.target.closest(".cloud-div");
+    if (!cloudDiv){
         return
     }
 
     // target.dataset으로 해결; 흠 토글로 들어간건 불리언, 넘버 등등 타입이 달라도 결국 스트링으로 나오네..
-    if (cd.dataset.toggle){
-        cd.style["margin-left"] = "0";
-        cd.dataset.toggle = "";
+    if (cloudDiv.dataset.toggle){
+        cloudDiv.style["margin-left"] = "0";
+        cloudDiv.dataset.toggle = "";
     } else {
-        const idx = parseInt(cd.dataset.idx);
-        cd.style["margin-left"] = (SQUERESIZE * idx).toString() + "px";
-        cd.dataset.toggle = true;
+        const idx = parseInt(cloudDiv.dataset.idx);
+        cloudDiv.style["margin-left"] = (SQUERESIZE * idx).toString() + "px";
+        cloudDiv.dataset.toggle = true;
     }
     // 트랜지션 관련 이슈.
     // transition all 0.5s로 설정했을 때,
