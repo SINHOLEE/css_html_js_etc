@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.box {
+				width: 100px;
+				height: 100px;
+				margin: 10px;
+				transition: all 2s;
+			}
+			.to-right {
+				width: 200px;
+				height: 200px;
+				margin: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="app"></div>
+	</body>
+	<script>
+		const pxToNum = (value) =>
+			typeof value === "string" ? parseInt(value.replace("px", ""), 10) : value;
+
+		const app = document.querySelector(".app");
+		const box = document.createElement("div");
+		const moveBtn = document.createElement("button");
+
+		moveBtn.innerText = " 이동";
+		app.appendChild(moveBtn);
+		app.appendChild(box);
+		moveBtn.addEventListener("click", () => {
+			box.classList.toggle("to-right");
+		});
+		box.style.background = "black";
+		box.classList.add("box");
+	</script>
+</html>

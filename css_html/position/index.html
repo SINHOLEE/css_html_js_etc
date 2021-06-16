@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.scss" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<h3 class="text-center">Overview of the available positioning types</h3>
+				<p class="text-center">Click on one of the buttons to see the demo</p>
+				<p class="text-center">
+					<strong>Note:</strong> Be sure to test the demo in a browser that supports the
+					sticky type
+				</p>
+				<div class="col-sm-4 col-md-3">
+					<button class="btn btn-default btn--first">
+						Add <code>position:absolute (top:10px,left:10px)</code> to the red box
+					</button>
+				</div>
+				<div class="col-sm-4 col-md-3">
+					<button class="btn btn-default btn--second">
+						Add <code>position:relative (top:120px,left:120px)</code> to the red box
+					</button>
+				</div>
+				<div class="col-sm-4 col-md-3">
+					<button class="btn btn-default btn--third">
+						Add <code>position:fixed (bottom:20px,left:0)</code> to the yellow box
+					</button>
+				</div>
+				<div class="col-sm-4 col-md-3">
+					<button class="btn btn-default btn--fourth">
+						Add <code>position:sticky (top:0)</code> to the yellow box
+					</button>
+				</div>
+				<div class="clearfix visible-sm-block"></div>
+				<div class="col-sm-4 col-md-3 clear">
+					<button class="btn btn-default btn--fifth">
+						Add <code>position:static</code> to the boxes (reset)
+					</button>
+				</div>
+			</div>
+
+			<div class="jumbotron" id="jumbotron">
+				<div id="box1" class="box"></div>
+				<div id="box2" class="box">
+					<p>
+						Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+						eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+						voluptua. At vero eos et accusam et justo duo dolores et ea eirmod tempor
+						invidunt ut labore.
+					</p>
+				</div>
+				<div id="box6" class="box"></div>
+				<div id="box7" class="box"></div>
+				<div id="box3" class="box"></div>
+				<div id="box4" class="box">
+					<p>
+						Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+						eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+						voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+						clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+						amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+						nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+						diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+						clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+						amet.
+					</p>
+					<p>
+						Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
+						molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros
+						et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril
+						delenit augue duis dolore te feugait nulla facilisi.Nam liber tempor cum
+						soluta nobis eleifend option congue nihil imperdiet doming id quod mazim
+						placerat facer possim assum.
+					</p>
+					<p>
+						Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
+						molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros
+						et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril
+						delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit
+						amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt
+						ut laoreet dolore magna aliquam erat volutpat.Ut wisi enim ad minim veniam,
+						quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex
+						ea commodo consequat.
+					</p>
+					<p>
+						Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+						nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut
+						wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
+						lobortis nisl ut aliquip ex ea commodo consequat.
+					</p>
+					<p>
+						Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
+						molestie consequat, vel illum dolore eu feugiat nulla facilisis.
+					</p>
+					<p>
+						At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+						gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem
+						ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+						tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+					</p>
+					<p>
+						Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+						labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+						accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+						takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+						consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+						labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+						accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+						takimata sanctus est Lorem ipsum dolor sit amet.
+					</p>
+					<p>
+						Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+						eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+						voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+						clita kasd gubergren, no sea takimata sanctus.
+					</p>
+				</div>
+			</div>
+			<div class="under_box"></div>
+			<div class="under_box"></div>
+			<div class="under_box"></div>
+		</div>
+	</body>
+	<script>
+		(function () {
+			"use strict";
+
+			// VARIABLES
+			var box1 = document.getElementById("box1");
+			var box2 = document.getElementById("box2");
+			var box4 = document.getElementById("box4");
+			var jumbotron = document.querySelector(".jumbotron");
+			var buttons = document.querySelectorAll("button");
+
+			// EVENTS
+			// FIRST BUTTON
+			document.querySelector(".btn--first").addEventListener("click", function (e) {
+				for (var i = 0; i < buttons.length; i++) {
+					buttons[i].classList.remove("active");
+				}
+				e.currentTarget.classList.add("active");
+				jumbotron.className = "jumbotron";
+				box1.className = "box";
+				box2.className = "box";
+				box4.style.display = "none";
+				box1.classList.add("class1");
+			});
+
+			// SECOND BUTTON
+			document.querySelector(".btn--second").addEventListener("click", function (e) {
+				for (var i = 0; i < buttons.length; i++) {
+					buttons[i].classList.remove("active");
+				}
+				e.currentTarget.classList.add("active");
+				jumbotron.className = "jumbotron";
+				box1.className = "box";
+				box2.className = "box";
+				box4.style.display = "none";
+				box1.classList.add("class2");
+			});
+
+			// THIRD BUTTON
+			document.querySelector(".btn--third").addEventListener("click", function (e) {
+				for (var i = 0; i < buttons.length; i++) {
+					buttons[i].classList.remove("active");
+				}
+				e.currentTarget.classList.add("active");
+				jumbotron.className = "jumbotron";
+				box1.className = "box";
+				box2.className = "box";
+				box4.style.display = "none";
+				box2.classList.add("class3");
+			});
+
+			// FOURTH BUTTON
+			document.querySelector(".btn--fourth").addEventListener("click", function (e) {
+				for (var i = 0; i < buttons.length; i++) {
+					buttons[i].classList.remove("active");
+				}
+				e.currentTarget.classList.add("active");
+				jumbotron.classList.add("class5");
+				box1.className = "box";
+				box2.className = "box";
+				box2.classList.add("class4");
+				//box4.style.display = "block";
+			});
+
+			// FIFTH BUTTON
+			document.querySelector(".btn--fifth").addEventListener("click", function (e) {
+				for (var i = 0; i < buttons.length; i++) {
+					buttons[i].classList.remove("active");
+				}
+				e.currentTarget.classList.add("active");
+				jumbotron.className = "jumbotron";
+				box1.className = "box";
+				box2.className = "box";
+				box4.style.display = "none";
+			});
+		})();
+	</script>
+</html>

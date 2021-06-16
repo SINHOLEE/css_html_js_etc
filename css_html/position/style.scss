@@ -1,0 +1,129 @@
+/* GENERAL STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+$jumbotron-color: black;
+
+.container {
+	position: static;
+	height: 100%;
+	overflow: auto;
+}
+body {
+	margin-top: 50px;
+	background: whitesmoke;
+}
+
+h3 + p {
+	margin-bottom: 15px;
+}
+
+p + p {
+	font-style: italic;
+	margin-bottom: 30px;
+}
+.row {
+	position: static;
+}
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn:active:focus,
+.btn:focus {
+	outline: 0;
+}
+
+.btn {
+	white-space: normal;
+	margin: 10px;
+}
+
+.clear {
+	@media only screen and (min-width: 992px) {
+		clear: both;
+	}
+}
+.under_box {
+	margin: 2px;
+	width: 100px;
+	height: 100px;
+	background-color: #dc3522;
+}
+.jumbotron {
+	position: absolute;
+	// margin-top: 100px;
+	left: 50px;
+	// top: 50px;
+	overflow: auto;
+	background: $jumbotron-color;
+	border: 1px solid darken($jumbotron-color, 5%);
+	padding-left: 10px;
+	padding-right: 10px;
+	.box {
+		width: 120px;
+		height: 120px;
+		border-radius: 5px;
+		margin-bottom: 20px;
+	}
+	#box1 {
+		background: lighten(#dc3522, 25%);
+	}
+	#box2 {
+		background: lighten(#c89e3d, 25%);
+		box-shadow: 0 7px 5px -5px #333;
+		padding: 8px 10px;
+		width: auto;
+		height: auto;
+	}
+	#box3 {
+		background: lighten(#5d9442, 25%);
+	}
+	#box4 {
+		background: lighten(#c89e3d, 35%);
+		display: none;
+		padding: 10px;
+		width: calc(100% - 50px);
+		margin: 0 auto 20px;
+		height: auto;
+	}
+	p {
+		font-size: 1.15em;
+		font-style: normal;
+	}
+	@media only screen and (min-width: 768px) {
+		padding-left: 60px;
+		padding-right: 60px;
+	}
+}
+
+/* CLASSES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.class1 {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+
+.class2 {
+	position: relative;
+	top: 120px;
+	left: 120px;
+}
+
+.class3 {
+	position: fixed;
+	top: 0px;
+	left: 0;
+}
+
+.class4 {
+	position: sticky;
+	top: 0;
+}
+
+.class5 {
+	overflow-y: auto;
+	height: 250px;
+	padding-top: 0;
+	padding-bottom: 0;
+}

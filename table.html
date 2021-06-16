@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Table Example</title>
-</head>
-<body>
-    <table class="restaurant"style="text-align: center; margin:100px 0;" summary="짬뽕은 자장면보다 500원 비싸고 열량이 50kcal 높다">
-    <caption>자장면과 짬뽕의 가격과 열량 비교</caption>
-    <col span="1" style="width:100px; background-color:brown" >
-    <col span="2" style="width:150px; background-color:cyan" >
-    <thead id="menu-thead" style="background-color: burlywood;">
-    <tr>
-    <th scope="col" >구분</th>
-    <th scope="col" abbr="price">가격(won)</th>
-    <th scope="col" abbr="kcal">열량(kcal)</th>
-    </tr>
-    </thead>
-    <tfoot id="menu-tfoot">
-    <tr>
-    <th scope="row" >계</th>
-    <td>0</td>
-    <td>0</td>
-    </tr>
-    </tfoot>
-    <tbody id="menu-tbody" attr="asd"></tbody>
-    </table>
-    <script src="table.js"></script>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Table Example</title>
+	</head>
+	<body>
+		<table
+			class="restaurant"
+			style="text-align: center; margin: 100px 0"
+			summary="짬뽕은 자장면보다 500원 비싸고 열량이 50kcal 높다"
+		>
+			<caption>
+				자장면과 짬뽕의 가격과 열량 비교
+			</caption>
+			<col span="1" style="width: 100px; background-color: brown" />
+			<col span="2" style="width: 150px; background-color: cyan" />
+			<thead id="menu-thead" style="background-color: burlywood">
+				<tr>
+					<th scope="col" abbr="name">구분</th>
+					<th scope="col" abbr="price">가격(won)</th>
+					<th scope="col" abbr="kcal">열량(kcal)</th>
+				</tr>
+			</thead>
+			<tfoot id="menu-tfoot">
+				<tr>
+					<th scope="row">계</th>
+					<td>0</td>
+					<td>0</td>
+				</tr>
+			</tfoot>
+			<tbody id="menu-tbody" attr="asd"></tbody>
+		</table>
+		<script src="table.js"></script>
+	</body>
 </html>
