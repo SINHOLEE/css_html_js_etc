@@ -53,7 +53,7 @@ export default class Items extends Component {
 		btn.setAttribute('disabled', true);
 		const newItem = await addItem(input.value);
 		const newItems = await getItems();
-		this.setState({items: [...newItems]});
+		this.setState({items: [...newItem]});
 		btn.setAttribute('disabled', false);
 		input.setAttribute('disabled', false);
 		input.focus();
@@ -80,6 +80,8 @@ export default class Items extends Component {
 
 	toggleEvent() {
 		console.log('add event listener toggle');
+
+		this.addEvent('click', '.item-li');
 		this.$target.addEventListener('click', ({target}) => {
 			const li = target.closest('.item-li');
 			if (!li) return;
