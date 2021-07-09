@@ -5,6 +5,7 @@ export default class Component {
 		this.$target = $target;
 		this.setup();
 		this.render();
+		this.setEvent();
 	}
 	async setup() {}
 	template() {
@@ -13,8 +14,18 @@ export default class Component {
 	render() {
 		const innerHTML = this.template();
 		this.$target.innerHTML = innerHTML;
-		this.setEvent();
+		this.afterRender();
 	}
+	addEvent(eventType, selector, callback) {
+		const children = [...this.$target.querySelectorAll(selector)];
+
+		const isTarget = (target) => children.includes(target) || target.closest(selector);
+		this.$target.addEventListener(eventType, (e) => {
+			if (!isTarget(e.target)) return false;
+			callback(e);
+		});
+	}
+	afterRender() {}
 	setEvent() {}
 	setState(newState) {
 		this.$state = {...this.$state, ...newState};

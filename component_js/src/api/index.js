@@ -9,10 +9,11 @@ const UUID = () => {
 };
 
 export const getItems = () => {
+	console.log('call getItem api');
 	return new Promise((resolve) => {
 		setTimeout(() => {
 			resolve(items.slice());
-		}, 2000);
+		}, 500);
 	});
 };
 
@@ -23,7 +24,7 @@ export const deleteItem = (id) => {
 		setTimeout(() => {
 			items.splice(itemIndex, 1);
 			resolve(id);
-		}, 1000);
+		}, 500);
 	});
 };
 
@@ -34,7 +35,7 @@ export const addItem = (text) => {
 		setTimeout(() => {
 			items.push(newItems);
 			resolve(newItems);
-		}, 1000);
+		}, 500);
 	});
 };
 
@@ -45,6 +46,6 @@ export const toggleItem = (id) => {
 		setTimeout(() => {
 			items = items.filter((item) => (item.id === id ? {...item, done: !item.done} : item));
 			resolve(id);
-		}, 1000);
+		}, 500);
 	});
 };

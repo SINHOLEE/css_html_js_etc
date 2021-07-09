@@ -15,28 +15,36 @@ export default class Items extends Component {
 	loading() {
 		this.$target.innerHTML = `<div>loading...</div>`;
 	}
+	afterRender() {
+		const input = document.querySelector('.item-input');
+		if (!input) return;
+		input.focus();
+		console.log(input);
+	}
 
 	async setup() {
 		this.$state = {items: await getItems()};
 	}
 	template() {
-		console.log('temp this: ', this);
 		if (!this.$state?.items) return '';
 		const {items} = this.$state;
 		return `
-        <input id='item-input'/>
-        <button>추가</button>
+        <input class='item-input' />
+        <button type='submit' class='item-submit-btn'>추가</button>
 
       <ul>
         ${items
 			.map(
 				(item) =>
-					`<li style='color:${item.done ? 'red' : 'blue'}' data-id=${item.id}><span>${
-						item.value
-					}</span><button class='delete-btn' data-id=${item.id}>삭제</button></li>`,
+					`<li class='item-li' style='color:${item.done ? 'red' : 'blue'}' data-id=${
+						item.id
+					}><span>${item.value}</span><button class='delete-btn' data-id=${
+						item.id
+					}>삭제</button></li>`,
 			)
 			.join('')}
       </ul>
+      <div class='modal hidden' style="display:none; width:100%; height:100%; position:fixed; z-index:10; top:0; left:0; background-color:rgb(0,0,0,0.4);"></div>
     `;
 	}
 	async _addItem(input, btn) {
@@ -44,57 +52,60 @@ export default class Items extends Component {
 		input.setAttribute('disabled', true);
 		btn.setAttribute('disabled', true);
 		const newItem = await addItem(input.value);
-		this.setState({items: [...items, newItem]});
+		const newItems = await getItems();
+		this.setState({items: [...newItems]});
 		btn.setAttribute('disabled', false);
 		input.setAttribute('disabled', false);
 		input.focus();
 	}
 
 	inputEvent() {
-		console.log('input', this);
-		const btn = this.$target.querySelector('button');
-		const input = document.querySelector('#item-input');
-		if (!input) return;
-		input.addEventListener('keypress', ({key}) => {
+		console.log('add event listener input');
+		this.$target.addEventListener('keypress', ({key, target}) => {
 			if (key.toLocaleLowerCase() !== 'enter') return;
-			this._addItem(input, btn);
+			if (!target.classList.contains('item-input')) return;
+			if (!target.value) return;
+			const btn = this.$target.querySelector('.item-submit-btn');
+			this._addItem(target, btn);
 		});
-		if (!btn) return;
-		btn.addEventListener('click', () => {
-			this._addItem(input, btn);
+		this.$target.addEventListener('click', (e) => {
+			e.preventDefault();
+			const target = e.target;
+			const input = this.$target.querySelector('.item-input');
+			if (!input.value) return;
+			if (!target.classList.contains('item-submit-btn')) return;
+			this._addItem(input, target);
 		});
 	}
 
 	toggleEvent() {
-		if (!this.$target) return;
-		console.log(this);
-		this.$target.addEventListener('click', (e) => {
-			console.log(e);
-			const target = e.target.closest('[data-id]');
-			console.log(target);
+		console.log('add event listener toggle');
+		this.$target.addEventListener('click', ({target}) => {
+			const li = target.closest('.item-li');
+			if (!li) return;
+			console.log(li);
 		});
 	}
 
 	deleteEvent() {
-		const deleteBtns = this.$target.querySelectorAll('.delete-btn');
-		if (!deleteBtns) return;
-		deleteBtns.forEach((delBtn) => {
-			delBtn.addEventListener('click', async (e) => {
-				const id = e.target.dataset.id;
-				if (!id) return;
-				e.target.setAttribute('disabled', true);
-				e.target.innerHTML = '삭제중...';
-				const res = await deleteItem.call(this, e.target.dataset.id);
-				if (res) {
-					const newItems = this.$state.items.filter((item) => item.id !== res);
-					this.setState({items: newItems});
-				}
-				e.target.setAttribute('disabled', false);
-			});
+		console.log('add event listener delete');
+		this.$target.addEventListener('click', async ({target}) => {
+			if (!target.classList.contains('delete-btn')) return;
+			const id = target.dataset.id;
+			if (!id) return;
+			target.setAttribute('disabled', true);
+			target.innerHTML = '삭제중...';
+			const res = await deleteItem.call(this, target.dataset.id);
+			if (res) {
+				const newItems = await getItems();
+				this.setState({items: [...newItems]});
+			}
+			target.setAttribute('disabled', false);
 		});
 	}
 
 	setEvent() {
+		console.log(this);
 		this.inputEvent();
 		this.deleteEvent();
 		this.toggleEvent();
