@@ -9,9 +9,9 @@ export default class Items extends Component {
         ${items
 					.map(
 						(item) =>
-							`<li class='item-li' style='color:${
+							`<li data-id=${item.id} class='item-li' style='color:${
 								item.done ? 'red' : 'blue'
-							}' ><span data-id=${item.id}>${
+							}' ><span >${
 								item.value
 							}</span><button class='delete-btn' data-id=${
 								item.id
@@ -24,12 +24,12 @@ export default class Items extends Component {
 	setEvent() {
 		this.addEvent('click', '.delete-btn', (e) => {
 			// e.stopProp÷agation();
-			console.log(e.target.dataset.id);
 			this.props.onDeleteItem(e.target.dataset.id);
 		});
-		this.addEvent('click', 'span', (e) => {
-			console.log(e.target.dataset.id);
-			this.props.onToggleItem(e.target.dataset.id);
+		this.addEvent('click', '[data-id]', (e) => {
+			console.log(e.target);
+			console.log(e);
+			// this.props.onToggleItem(e.target.dataset.id);
 		});
 	}
 
