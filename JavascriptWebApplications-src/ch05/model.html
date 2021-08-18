@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Binding</title>
+		<script src="lib/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="lib/jquery.tmpl.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<script id="userTmpl" type="text/x-jquery-tmpl">
+			<li data-name="${name}" ><span>${name}</span><button data-name="${name}" calss="user_delete_btn">삭제</button></li>
+		</script>
+		<input name="input_name" />
+		<button id="create_user_btn">create user</button>
+		<ul id="users"></ul>
+	</body>
+	<script type="text/javascript" charset="utf-8" defer>
+		var User = function (name) {
+			this.name = name;
+		};
+		User.print = function () {
+			console.log(User.records);
+		};
+		User.records = [];
+
+		User.bind = function (ev, callback) {
+			var calls = this._callbacks || (this._callbacks = {});
+			(this._callbacks[ev] || (this._callbacks[ev] = [])).push(callback);
+		};
+
+		User.trigger = function (ev) {
+			var list, calls, i, l;
+			if (!(calls = this._callbacks)) return this;
+			if (!(list = this._callbacks[ev])) return this;
+			jQuery.each(list, function () {
+				this();
+			});
+		};
+		User.edit = function (originName, newName) {
+			const newRecords = this.records.map((user) =>
+				user.name === originName ? new this(newName) : user,
+			);
+			this.update(newRecords);
+		};
+		User.find = function (name) {
+			if (name === "") return null;
+			return this.records.find((user) => user.name === name);
+		};
+		User.update = function (newRecords) {
+			this.records = newRecords;
+			this.trigger("change");
+		};
+		User.remove = function (name) {
+			const u = this.find(name);
+			this.update(this.records.filter((user) => user.name !== name));
+		};
+		User.create = function (name) {
+			this.records.push(new this(name));
+			this.trigger("change");
+		};
+
+		jQuery(function ($) {
+			User.bind("change", function () {
+				var template = $("#userTmpl").tmpl(User.records);
+
+				$("#users").empty();
+				$("#users").append(template);
+			});
+
+			User.create("First one");
+
+			setTimeout(function () {
+				User.create("Another one");
+			}, 2000);
+		});
+		// remove
+		document.querySelector("#users").addEventListener("click", (e) => {
+			const btn = e.target.closest("button");
+			if (!btn) return;
+			User.remove(btn.dataset.name);
+			User.print();
+		});
+
+		//edit
+		document.querySelector("#users").addEventListener("dblclick", (e) => {
+			const input = document.querySelector('input[name="input_name"]');
+			const li = e.target.closest("li");
+			if (!li) return;
+			User.edit(li.dataset.name, input.value);
+			input.value = "";
+			User.print();
+		});
+
+		const btn = document.querySelector("#create_user_btn");
+		btn.addEventListener("click", () => {
+			const input = document.querySelector('input[name="input_name"]');
+			input.value = "";
+			User.print();
+		});
+	</script>
+</html>
