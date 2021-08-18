@@ -1,0 +1,13 @@
+.parents {
+	width: 400px;
+	height: 400px;
+	background-color: orange;
+	margin: 0 auto;
+}
+.children {
+	width: 100px;
+	height: 100px;
+	background-color: orangered;
+	margin: 5px auto;
+	text-align: center;
+}

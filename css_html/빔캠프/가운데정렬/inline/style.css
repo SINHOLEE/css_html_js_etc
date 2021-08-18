@@ -1,0 +1,15 @@
+.dot-wrapper {
+	text-align: center;
+}
+
+.dot {
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	background-color: orangered;
+	color: wheat;
+	font-size: 2rem;
+	text-align: center;
+	line-height: 100px;
+	margin: 0 auto;
+}

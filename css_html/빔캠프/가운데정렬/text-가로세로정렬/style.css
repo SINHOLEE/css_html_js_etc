@@ -1,0 +1,20 @@
+body {
+	background-color: #999;
+}
+.wrapper {
+	width: 300px;
+	height: 300px;
+	margin: 50px auto;
+	overflow: scroll;
+}
+.box {
+	font-size: 20px;
+	background-color: rgb(182, 105, 105);
+	width: 300px;
+	overflow: auto;
+	text-align: center;
+	padding: 2em 0;
+}
+.text {
+	background-color: lightcoral;
+}
